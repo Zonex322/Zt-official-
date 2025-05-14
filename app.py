@@ -1,10 +1,11 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import random
 from datetime import datetime
 import pytz
 
 app = Flask(__name__)
-
+CORS(app)
 pairs = ["USDINR_OTC", "USDPKR_OTC", "EURUSD", "BTCUSD", "ETHUSD", "USDZAR", "AUDCAD", "EURCAD", "USDCAD", "USDJPY"]
 
 @app.route("/api/signal", methods=["GET"])
